@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calorie Tracker</title>
+    <!-- Link to our manifest for PWA features -->
+    <link rel="manifest" href="manifest.json" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome CSS for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="manifest.json" />
+
+  </head>
+  <body>
+    <header class="bg-success text-white p-3">
+      <div class="container d-flex justify-content-between align-items-center">
+        <!-- Replace the h1 title with an image -->
+        <img src="icon.png" alt="Calorie Tracker Icon" class="header-icon" />
+        <nav>
+          <button id="addEntryTab" class="btn btn-outline-light active">Snap</button>
+          <button id="historyTab" class="btn btn-outline-light">Rewind</button>
+        </nav>
+      </div>
+    </header>
+    
+    <main class="container mt-4">
+      <!-- Add Entry Section -->
+      <section id="addEntrySection">
+        <form id="entryForm">
+          <div class="form-group" id="dateGroup">
+            <label for="entryDate">Date:</label>
+            <input type="date" id="entryDate" class="form-control" required />
+          </div>
+          <!-- Weight Measurements -->
+          <div class="form-section card mb-4">
+            <div class="card-body">
+              <h2 class="h5 card-title">Weight Measurements</h2>
+              <div id="weightEntries">
+                <!-- Weight entry items will be added here -->
+              </div>
+              <button type="button" id="addWeightBtn" class="btn btn-outline-success mt-2">Add Weight Measurement</button>
+            </div>
+          </div>
+          <!-- Calories In (Food) -->
+          <div class="form-section card mb-4">
+            <div class="card-body">
+              <h2 class="h5 card-title">Calories In (Food)</h2>
+              <div id="inEntries">
+                <!-- Food entry items will be added here -->
+              </div>
+              <button type="button" id="addInBtn" class="btn btn-outline-success mt-2">Add Food Entry</button>
+            </div>
+          </div>
+          <!-- Calories Out (Exercise) -->
+          <div class="form-section card mb-4">
+            <div class="card-body">
+              <h2 class="h5 card-title">Calories Out (Exercise)</h2>
+              <div id="outEntries">
+                <!-- Exercise entry items will be added here -->
+              </div>
+              <button type="button" id="addOutBtn" class="btn btn-outline-success mt-2">Add Exercise Entry</button>
+            </div>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Save Entry</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- History Section -->
+      <section id="historySection" class="d-none">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h2 class="h5 m-0">History</h2>
+          <!-- Export and Import buttons -->
+          <div>
+            <button id="exportCsvBtn" class="btn btn-outline-success">Export CSV</button>
+            <button id="importCsvBtn" class="btn btn-outline-success">Import CSV</button>
+            <!-- Hidden file input for CSV import -->
+            <input type="file" id="importCsvInput" accept=".csv" style="display: none;" />
+          </div>
+        </div>
+        <div id="historyList">
+          <!-- Saved entries will be displayed here -->
+        </div>
+      </section>
+    </main>
+
+    <!-- Bootstrap JS and dependencies -->
+    <!-- jQuery (slim version is fine for Bootstrap 4’s collapse) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- Popper.js v1.16.0 (compatible with Bootstrap 4) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Bootstrap 4.5.2 JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+    <datalist id="weightOptions">
+      <option value="After Waking Up">
+      <option value="After First Dump">
+      <option value="After Breakfast">
+      <option value="After Gym">
+      <option value="After Lunch">
+    </datalist>
+  </body>
+</html>

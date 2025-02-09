@@ -1,0 +1,239 @@
+/* Reset some defaults */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* ---------------------------
+     Navigation Button Styling
+  --------------------------- */
+  
+  /* Style for Add Entry and History buttons */
+  #addEntryTab,
+  #historyTab {
+    font-family: 'Montserrat', sans-serif;  /* Updated nav font */
+    font-weight: 500;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    max-width: 100%;
+    white-space: nowrap;
+    border-radius: 4px;
+    font-weight: 900;
+  }
+  .history-collapse-button {
+    background: none;
+    border: none;
+    color: inherit;
+    text-decoration: none;
+    font-size: inherit;
+    font-size: 0.8em;
+    cursor: pointer;
+  }
+  
+  #dateGroup{
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f0efef;
+    border-radius: 7px;
+  }
+  
+  /* Active and hover states */
+  #addEntryTab.focus,
+  #addEntryTab.active,
+  #addEntryTab:hover,
+  #historyTab.focus,
+  #historyTab.active,
+  #historyTab:hover {
+    background-color: white;
+    color: #04a441;
+    outline: none !important;
+    border: 2px solid #04a441;
+  }
+  
+  /* ---------------------------
+     Header Styling
+  --------------------------- */
+  header {
+    margin: 10px;
+    border-radius: 11px;
+    box-shadow: 0 2px 16px 2px #8d8d8d;
+    /* Do not override background or text color so the original (or Bootstrap) styling remains */
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+  
+  /* Ensure the navigation stays on one line */
+  header nav {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  /* Header Icon Styling */
+  /* Replace the title text with your PNG icon by using an <img> element with the .header-icon class */
+  .header-icon {
+    max-height: 50px; /* Adjust as needed */
+    width: auto;
+    display: block;
+  }
+  
+  /* Responsive adjustments for header nav on mobile */
+  @media (max-width: 576px) {
+    header nav button {
+      padding: 8px 10px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* ---------------------------
+     Prevent Horizontal Scrolling
+  --------------------------- */
+  html,
+  body {
+    overflow-x: hidden;
+  }
+  
+  /* ---------------------------
+     Base Styles
+  --------------------------- */
+  body {
+    font-family: 'Roboto', sans-serif;
+    background: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* ---------------------------
+     General Button Styling
+  --------------------------- */
+  button,
+  .btn {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    border: none;
+  }
+  
+  /* Primary buttons (e.g. Save Entry) */
+  .btn-primary,
+  button.primary {
+    background-color: #04a441;
+    color: #fff;
+    width: -webkit-fill-available;
+    margin-bottom: 10px;    
+}
+  
+.avgwt{
+    border-radius: 19px;
+    background-color: green;
+    padding: 7px;
+    padding-right: 12px;
+    padding-left: 12px;
+    color: white;
+}
+
+  .btn-primary:hover,
+  button.primary:hover {
+    background-color: #006a28;
+    }
+
+  /* Outline Success buttons (e.g. Add Weight/Food/Exercise buttons) */
+  .btn-outline-success,
+  button.outline-success {
+    color: #04a441;
+    border: 2px solid #04a441;
+    background-color: transparent;
+  }
+  
+  .btn-outline-success:hover,
+  button.outline-success:hover {
+    background-color: #04a441;
+    color: #fff;
+  }
+  
+  /* ---------------------------
+     Entry Items Styling
+  --------------------------- */
+  .entry-item {
+    position: relative;  /* Enables absolute positioning for the remove button */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+    padding: 3%;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    align-items: center;
+  }
+  
+  .entry-item input {
+    flex: 1 1 auto;
+    min-width: 150px;
+  }
+  
+  /* ---------------------------
+     Remove Button Styling as a White Circle with Light Shadow
+     Positioned on the Top Right Corner of the Entry Item
+  --------------------------- */
+  .remove-btn {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #04a441;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .remove-btn:hover {
+    background-color: #f4f4f4;
+    transform: scale(1.1);
+  }
+  
+  /* ---------------------------
+     Additional Element Styling
+  --------------------------- */
+  #addWeightBtn {
+    width: -webkit-fill-available;
+  }
+  
+  #addInBtn {
+    width: -webkit-fill-available;
+  }
+  
+  #addOutBtn {
+    width: -webkit-fill-available;
+  }
+  
+  /* ---------------------------
+     Responsive Adjustments for Narrow Viewports
+  --------------------------- */
+  @media (max-width: 576px) {
+    .entry-item {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .remove-btn {
+      top: -8px;
+      right: -8px;
+    }
+  }
+  
