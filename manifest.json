@@ -1,6 +1,6 @@
 {
-    "name": "Calorie Tracker",
-    "short_name": "Tracker",
+    "name": "Calorie",
+    "short_name": "Calorie",
     "start_url": "./index.html",
     "display": "standalone",
     "background_color": "#ffffff",
